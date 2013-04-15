@@ -30,7 +30,7 @@ class git::gitweb (
   # With selinux, gitweb gets denied access to gitosis/gitolite files
   if $selinux and $::selinux_enforced {
     selinux::audit2allow { 'gitweb':
-      source => 'puppet:///modules/git/messages.gitweb',
+      source => "puppet:///modules/${module_name}/messages.gitweb",
     }
   }
 
